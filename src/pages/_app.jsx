@@ -1,12 +1,15 @@
 import '../styles/globals.css';
 
 import { CartProvider } from '../contexts/cart-context';
+import { AuthProvider } from '../contexts/auth-context';
 
 const App = ({ Component, pageProps }) => {
   return (
-    <CartProvider>
-      <Component {...pageProps} />
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <Component {...pageProps} />
+      </CartProvider>
+    </AuthProvider>
   );
 };
 
